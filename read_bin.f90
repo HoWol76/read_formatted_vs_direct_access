@@ -5,9 +5,10 @@ program read_txt
     real(kind=real64) :: request(3), pos(3), B(3)
     integer :: ios, u_in
     integer :: ii, jj, kk, record
+    integer, parameter :: reclength = 6 * 8 ! Six 8-byte values
 
     open(newunit=u_in, file='data.bin', access='direct', form='unformatted', &
-        status='old', action='read', recl=6*8)
+        status='old', action='read', recl=reclength)
     mainloop : do
         read(*, *, iostat=ios) request
         if (ios /= 0) exit mainloop
