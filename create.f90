@@ -12,9 +12,9 @@ program create_square
 
     open(newunit=outunit, file='data.txt', action='write', status='new')
 
-    do kk=1, nz
+    do ii = 1, nx
         do jj = 1, ny
-            do ii = 1, nx
+            do kk=1, nz
                 call random_number(B)
                 write(outunit, '(6(F15.5))') x(ii), y(jj), z(kk), B
             end do
