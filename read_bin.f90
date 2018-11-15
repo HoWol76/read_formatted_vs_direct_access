@@ -14,9 +14,9 @@ program read_txt
         if (ios /= 0) exit mainloop
         write(*, '(A, 3F7.2)') 'searching for ', request
         ! Calculate record
-        ii = int((request(1)-x_min + x_step/2)/x_step)
-        jj = int((request(2)-y_min + y_step/2)/y_step)
-        kk = int((request(3)-z_min + z_step/2)/z_step)
+        ii = nint((request(1)-x_min)/x_step)
+        jj = nint((request(2)-y_min)/y_step)
+        kk = nint((request(3)-z_min)/z_step)
         record = kk + jj * nz + ii * nz * ny + 1
         read(u_in, rec=record, iostat=ios) pos, B
         if (ios /= 0) then
