@@ -1,13 +1,11 @@
 FC=gfortran
 FLAGS=-O2
+targets=create convert read_txt read_csv
 
 .SUFFIXES:
 .SUFFIXES: .f90 .o .F90
 
-create : create.f90 
+$(targets) : % : %.f90
 	$(FC) $(FLAGS) -o $@ $<
 
-convert : convert.f90
-	$(FC) $(FLAGS) -o $@ $<
-
-create convert : size.h
+$(targets) : size.h
