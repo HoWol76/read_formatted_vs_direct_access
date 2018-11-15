@@ -1,3 +1,5 @@
 create
 convert
 data.*
+read_bin
+read_txt
