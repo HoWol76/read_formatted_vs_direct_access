@@ -1,7 +1,6 @@
 program convert
     use iso_fortran_env, only: real64
     implicit none
-    include "size.h"
     integer :: ii, ios
     integer :: u_in, u_out
     real(kind=real64) :: pos(3), B(3)
