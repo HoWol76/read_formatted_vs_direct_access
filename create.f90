@@ -6,9 +6,9 @@ program create_square
     real(kind=real64) :: B(3)
     integer :: ii, jj, kk, outunit
 
-    x = [((ii-real(nx/2, kind=real64)), ii=0, nx-1)]
-    y = [((ii-real(ny/2, kind=real64)), ii=0, ny-1)]
-    z = [((ii-real(nz/2, kind=real64)), ii=0, nz-1)]
+    x = [(x_min + ii * x_step, ii=0, nx-1)]
+    y = [(y_min + jj * y_step, jj=0, ny-1)]
+    z = [(z_min + kk * z_step, kk=0, nz-1)]
 
     open(newunit=outunit, file='data.txt', action='write', status='new')
 
